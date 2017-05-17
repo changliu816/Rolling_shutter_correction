@@ -1,0 +1,1 @@
+function [ZRI,ZGI,ZBI] = inverse_interp(x,y,zr,zg,zb)% 2012-2-22% image warping using inverse mapping[h,w] = size(x);xx = linspace(0,w-1,w);yy = linspace(0,h-1,h);[X,Y] = meshgrid(xx,yy);ZRI = interp2(X,Y,zr,x,y,'linear',0);ZGI = interp2(X,Y,zg,x,y,'linear',0);ZBI = interp2(X,Y,zb,x,y,'linear',0);

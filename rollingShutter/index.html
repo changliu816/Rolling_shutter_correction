@@ -1,0 +1,203 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 9">
+<meta name="Originator" content="Microsoft Word 9">
+<link rel="File-List" href="http://users.ece.utexas.edu/~bevans/projects/halftoning/toolbox/index_files/filelist.xml">
+<title>Rolling Shutter Video Rectification Toolbox for MATLAB</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>mongav</o:Author>
+  <o:LastAuthor>mongav</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>15</o:TotalTime>
+  <o:Created>2002-08-30T06:34:00Z</o:Created>
+  <o:LastSaved>2002-10-18T07:29:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>381</o:Words>
+  <o:Characters>2172</o:Characters>
+  <o:Company>univ. of texas</o:Company>
+  <o:Lines>18</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2667</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:480773190;
+	mso-list-type:hybrid;
+	mso-list-template-ids:963005964 -1660369130 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-start-at:2;
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:588272313;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-719652122 315629506 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:1020278230;
+	mso-list-type:hybrid;
+	mso-list-template-ids:809537632 1864558620 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-start-at:4;
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:1829248481;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-847076746 -1709403200 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-start-at:2;
+	mso-level-text:%1;
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:2082831624;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1055996524 58993412 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-start-at:2;
+	mso-level-tab-stop:24.0pt;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in" bgcolor="#ffd8a8">
+
+<div class="Section1">
+
+<center>
+<h1>Rolling Shutter Video Rectification Toolbox for MATLAB</h1>
+
+Chao Jia and Brian L. Evans<br>
+The University of Texas at Austin, Austin, TX 78712 USA
+
+<p>
+
+15 October 2012
+</center>
+
+Download the toolbox
+<a href="http://users.ece.utexas.edu/~bevans/projects/dsc/software/rollingShutter/rollingShutter1_0.zip">here</a>.
+This toolbox has been tested in Matlab R2011b.
+<p>
+The toolbox is used for rolling shutter video rectification on smartphones.
+It estimates the camera 3D rotation using gyroscope readings and the video
+using extended Kalman filtering (EKF).
+The rotation estimate is then used to rectify the rolling shutter effects
+of the video.
+Please run the &quot;rolling_shutter_demo.m&quot; script to see how it works.</p>
+<p>
+To rectify the rolling shutter videos, we need the video file and also the 
+gyroscope readings while the video is recorded.
+We used the Android app &quot;<a href="https://play.google.com/store/apps/details?id=com.cellbots.logger&amp;feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5jZWxsYm90cy5sb2dnZXIiXQ..">Sensor Data Logger</a>&quot;
+to capture the gyroscope readings while recording video.
+This app will save the gyroscope readings in a text file that can be directly 
+processed by the functions in the toolbox.
+In addition, we need to extract the framestamps of the video.
+The framestamps are extracted by a C++ implementation based on
+<a href="http://opencv.org/">OpenCV</a>.
+The source file &quot;extract_framestamp.cpp&quot; is included in the
+toolbox release.</p>
+<p>
+The parameters of the camera on different smartphones are different,
+so we need to estimate the parameters first (calibration step).
+Please run the &quot;calib_demo.m&quot; script to estimate the camera
+parameters if necessary.</p>
+<p>
+In the toolbox, there is a example video file, together with its
+corresponding gyroscope readings and framestamps.
+The video (with gyroscope readings) is captured by Google Nexus S smartphone.
+The parameters of the camera are also provided.
+Please start to use the toolbox with this example.</p>
+<p>
+The toolbox depends on two open source libraries:
+<ol>
+<li><a href="http://www.vlfeat.org/">VLFEAT: An Open and Portable Library
+    of Computer Vision Algorithms</a>.
+    Please make sure to install this libarary before using our toolbox by just 
+following the default installation options.<li><a href="http://www.ics.forth.gr/~lourakis/levmar/">Levenberg-Marquardt
+    nonlinear least squares algorithms in C/C++</a>.
+    We have included the compiled mex files that are ready to use in
+    Matlab under both Windows and Mac OSX.
+</ol>
+<p>
+This toolbox was programmed by <a href="http://signal.ece.utexas.edu/~cjia/">Chao Jia</a>. For questions on the toolbox please write to Chao Jia at
+<a href="mailto:cjia@utexas.edu">cjia@utexas.edu</a>.</p>
+<p>
+<strong>Reference</strong>
+<p>
+<A HREF="http://signal.ece.utexas.edu/~cjia/">C. Jia</A> and
+<A HREF="http://www.ece.utexas.edu/~bevans">B. L. Evans</A>,
+<A HREF="http://www.ece.utexas.edu/~bevans/papers/2012/rolling/index.html">"Probabilistic 3-D Motion Estimation for Rolling Shutter Video Rectification from Visual and Inertial Measurements"</a>,
+<em>Proc. IEEE Int. Workshop on Multimedia Signal Processing</em>,
+Sep. 17-20, 2012, Banff, Canada.
+
+<p>&nbsp;</p>
+
+<p class="MsoNormal"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="MsoNormal"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+</div>
+
+
+
+
+</body></html>

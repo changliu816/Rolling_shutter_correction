@@ -1,0 +1,1 @@
+function [x_k_k, p_k_k] = ekf_update (x_k_km1, p_k_km1, H_k, VRV_k, z_k, py)% EKF filtering update step% ekf gain matrixK = p_k_km1*H_k'/(H_k*p_k_km1*H_k'+VRV_k);yy = py(1:2,:)./py([3;3],:);x_k_k = x_k_km1 + K*(z_k - reshape(yy, length(z_k), 1));p_k_k = (eye(length(x_k_k)) - K*H_k)*p_k_km1;

@@ -1,0 +1,1 @@
+function fpcoord = readfpcoord(filepath)% read the 3d coordinate values of feature points from a txt file% this txt file is prepared manually when we have a calibration chessboard% the z axis value is always 0 for chessboard calibrationfid = fopen(filepath);temp = fscanf(fid,'%f');ptnum = length(temp)/3;fpcoord = reshape(temp,[3,ptnum])';fclose(fid);
