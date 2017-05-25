@@ -1,5 +1,9 @@
 Rolling Shutter Video Rectification 
 
+cited from http://users.ece.utexas.edu/~bevans/projects/dsc/software/rollingShutter/
+Chao Jia and Brian L. Evans
+The University of Texas at Austin, Austin, TX 78712 USA
+
 Overall Description: 
 
 1. To rectify the rolling shutter videos, we need the video file and also the gyroscope readings while the video is recorded.
@@ -8,7 +12,7 @@ Overall Description:
      '' Zoom:1.0x
 	   ......
 	   {Sensor name= ...}''
-  - Put the gyroscope log file into folder:¡¡ data\shutter_correction_samples
+  - Put the gyroscope log file into folder:Â¡Â¡ data\shutter_correction_samples
   - Run "gyro_pre.m" and you can get two file - gyro.txt and td.txt 
   - Put the gyro.txt into its parent folder:  data\
       
